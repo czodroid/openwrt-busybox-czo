@@ -8,8 +8,10 @@ provided with Openwrt.
 Its size is 10% bigger, and I don't know why the openwrt team doesn't add
 these commands...
 
+```
 -rwxr-xr-x 1 root root 299061 2021-01-19 14:10 ./rom/bin/busybox
 -rwxr-xr-x 1 root root 327733 2021-01-19 14:10 ./overlay/upper/bin/busybox
+```
 
 ## Compiling
 
