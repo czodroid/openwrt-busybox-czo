@@ -30,6 +30,7 @@ Download the SDK, untar it and cd to it. Then run `feeds` to obtain all the late
 
 ```
 wget https://downloads.openwrt.org/releases/19.07.6/targets/ath79/generic/openwrt-sdk-19.07.6-ath79-generic_gcc-7.5.0_musl.Linux-x86_64.tar.xz
+tar -xf openwrt-sdk-19.07.6-ath79-generic_gcc-7.5.0_musl.Linux-x86_64.tar.xz
 cd openwrt-sdk-19.07.6-ath79-generic_gcc-7.5.0_musl.Linux-x86_64
 ./scripts/feeds update -a
 ./scripts/feeds install busybox
