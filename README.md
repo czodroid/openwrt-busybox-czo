@@ -1,8 +1,20 @@
 
 ## New BusyBox for OpenWRT
 
-Recompile BusyBox with cksum, ssty, tty, uuencode, uudecode, diff, chpasswd,
-xxd, arping, hostname, telnet, wget and editing savehistory, that are not 
+Recompile BusyBox with 
+arping, 
+chpasswd, 
+cksum, 
+diff, 
+hostname, 
+shred, 
+ssty, 
+telnet , 
+tty, 
+uudecode, 
+uuencode, 
+xxd
+and editing savehistory, that are not 
 provided with Openwrt.
 
 Its size is 10% bigger, and I don't know why the openwrt team doesn't add
@@ -29,14 +41,15 @@ documentation.
 Download the SDK, untar it and cd to it. Then run `feeds` to obtain all the latest package definitions and get busybox, then run `usign` to get a key-build, then copy .config.ow.czo (my defition of BusyBox),  then make!
 
 ```
-wget https://downloads.openwrt.org/releases/19.07.6/targets/ath79/generic/openwrt-sdk-19.07.6-ath79-generic_gcc-7.5.0_musl.Linux-x86_64.tar.xz
-tar -xf openwrt-sdk-19.07.6-ath79-generic_gcc-7.5.0_musl.Linux-x86_64.tar.xz
-cd openwrt-sdk-19.07.6-ath79-generic_gcc-7.5.0_musl.Linux-x86_64
+wget https://downloads.openwrt.org/releases/21.02.1//targets/ath79/generic/openwrt-sdk-21.02.1-ath79-generic_gcc-8.4.0_musl.Linux-x86_64.tar.xz
+tar -xf openwrt-sdk-21.02.1-ath79-generic_gcc-8.4.0_musl.Linux-x86_64.tar.xz
+cd openwrt-sdk-21.02.1-ath79-generic_gcc-8.4.0_musl.Linux-x86_64
 ./scripts/feeds update -a
 ./scripts/feeds install busybox
 ./staging_dir/host/bin/usign -G -s ./key-build -p ./key-build.pub -c "Local build key"
 cp ../.config.ow.czo .config
-make
+perl -i -pe 's,^PKG_RELEASE:=.*$,PKG_RELEASE:=99,' package/feeds/base/busybox/Makefile
+make package/busybox/compile
 ```
 
 The package is in `bin/packages/mips_24kc/base/busybox_1.30.1-9_mips_24kc.ipk`
