@@ -2,22 +2,19 @@
 ## New BusyBox for OpenWRT
 
 Recompile BusyBox with 
-arping, 
-chpasswd, 
 cksum, 
-diff, 
-hostname, 
 shred, 
 ssty, 
-telnet , 
 tty, 
-uudecode, 
-uuencode, 
-xxd
-and editing savehistory, that are not 
-provided with Openwrt.
+diff, 
+chpasswd, 
+xxd, 
+arping, 
+hostname, 
+telnet, 
+and editing savehistory, that are not provided with Openwrt.
 
-Its size is 10% bigger, and I don't know why the openwrt team doesn't add
+For busybox 1.30.1 on OpenWrt 19.07.6, its size is 10% bigger, and I don't know why the openwrt team doesn't add
 these commands...
 
 ```
@@ -37,11 +34,12 @@ documentation.
 
 ### Quickstart for TP-Link Archer C7 v2
 
+For busybox 1.33.1 on OpenWrt 21.02.1
 
-Download the SDK, untar it and cd to it. Then run `feeds` to obtain all the latest package definitions and get busybox, then run `usign` to get a key-build, then copy .config.ow.czo (my defition of BusyBox),  then make!
+Download the SDK, untar it and cd to it. Then run `feeds` to obtain all the latest package definitions and get busybox, then run `usign` to get a key-build, then copy .config.ow.czo (my defition of BusyBox), then make!
 
 ```
-wget https://downloads.openwrt.org/releases/21.02.1//targets/ath79/generic/openwrt-sdk-21.02.1-ath79-generic_gcc-8.4.0_musl.Linux-x86_64.tar.xz
+wget https://downloads.openwrt.org/releases/21.02.1/targets/ath79/generic/openwrt-sdk-21.02.1-ath79-generic_gcc-8.4.0_musl.Linux-x86_64.tar.xz
 tar -xf openwrt-sdk-21.02.1-ath79-generic_gcc-8.4.0_musl.Linux-x86_64.tar.xz
 cd openwrt-sdk-21.02.1-ath79-generic_gcc-8.4.0_musl.Linux-x86_64
 ./scripts/feeds update -a
@@ -52,8 +50,8 @@ perl -i -pe 's,^PKG_RELEASE:=.*$,PKG_RELEASE:=99,' package/feeds/base/busybox/Ma
 make package/busybox/compile
 ```
 
-The package is in `bin/packages/mips_24kc/base/busybox_1.30.1-9_mips_24kc.ipk`
-
+The package is in `bin/packages/mips_24kc/base/busybox_1.33.1-99_mips_24kc.ipk`.
+Copy it to your-router:/tmp and install it `opkg install busybox_1.33.1-99_mips_24kc.ipk` !!!
 
 ## OpenWrt links
 
