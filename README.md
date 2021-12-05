@@ -1,18 +1,18 @@
 
 ## New BusyBox for OpenWRT
 
-Recompile BusyBox with 
-cksum, 
-shred, 
-ssty, 
-tty, 
-diff, 
-chpasswd, 
-xxd, 
-arping, 
-hostname, 
-telnet, 
-and editing savehistory, that are not provided with Openwrt.
+Recompile BusyBox with
+ cksum,
+ shred,
+ ssty,
+ tty,
+ diff,
+ chpasswd,
+ xxd,
+ arping,
+ hostname,
+ telnet
+ and editing savehistory, that are not provided with Openwrt.
 
 For busybox 1.30.1 on OpenWrt 19.07.6, its size is 10% bigger, and I don't know why the openwrt team doesn't add
 these commands...
@@ -51,7 +51,12 @@ make package/busybox/compile
 ```
 
 The package is in `bin/packages/mips_24kc/base/busybox_1.33.1-99_mips_24kc.ipk`.
-Copy it to your-router:/tmp and install it `opkg install busybox_1.33.1-99_mips_24kc.ipk` !!!
+
+Copy it to your OpenWRT
+ `scp bin/packages/mips_24kc/base/busybox_1.33.1-99_mips_24kc.ipk root@routeur-marion:/tmp/busybox_1.33.1-99_mips_24kc.ipk`
+and install it
+ `opkg install /tmp/busybox_1.33.1-99_mips_24kc.ipk`
+  !!!
 
 ## OpenWrt links
 
