@@ -14,13 +14,24 @@ Recompile BusyBox with
  telnet
  and editing savehistory, that are not provided with Openwrt.
 
-For busybox 1.30.1 on OpenWrt 19.07.6, its size is 10% bigger, and I don't know why the openwrt team doesn't add
-these commands...
+### Size
+
+Doing a `ls -al /rom/bin/busybox /overlay/upper/bin/busybox` you can know the size of BusyBox.
+
+For busybox 1.30.1 on OpenWrt 19.07.6, its size is 10% bigger,
 
 ```
--rwxr-xr-x 1 root root 299061 2021-01-19 14:10 ./rom/bin/busybox
--rwxr-xr-x 1 root root 327733 2021-01-19 14:10 ./overlay/upper/bin/busybox
+-rwxr-xr-x 1 root root 299061 2021-01-19 14:10 /rom/bin/busybox
+-rwxr-xr-x 1 root root 327733 2021-01-19 14:10 /overlay/upper/bin/busybox
 ```
+and the same size (?) on OpenWrt 21.02.1
+```
+-rwxr-xr-x    1 root     root        323621 Oct 25 21:44 /overlay/upper/bin/busybox
+-rwxr-xr-x    1 root     root        323621 Oct 24 11:01 /rom/bin/busybox
+```
+
+I don't know why the openwrt team doesn't add these commands...
+
 
 ## Compiling
 
