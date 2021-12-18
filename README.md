@@ -1,3 +1,12 @@
+<!--
+Filename: README.md
+Author: Olivier Sirol <czo@free.fr>
+License: GPL-2.0 (http://www.gnu.org/copyleft)
+File Created: nov. 2018
+Last Modified: samedi 18 décembre 2021, 16:59
+Edit Time: 2:00:44
+$Id:$
+-->
 
 ## New BusyBox for OpenWRT
 
@@ -24,7 +33,7 @@ For busybox 1.30.1 on OpenWrt 19.07.6, its size is 10% bigger,
 -rwxr-xr-x 1 root root 299061 2021-01-19 14:10 /rom/bin/busybox
 -rwxr-xr-x 1 root root 327733 2021-01-19 14:10 /overlay/upper/bin/busybox
 ```
-and the same size (?) on OpenWrt 21.02.1
+and it's the same size (?) for busybox 1.33.1 on OpenWrt 21.02.1
 ```
 -rwxr-xr-x    1 root     root        323621 Oct 25 21:44 /overlay/upper/bin/busybox
 -rwxr-xr-x    1 root     root        323621 Oct 24 11:01 /rom/bin/busybox
