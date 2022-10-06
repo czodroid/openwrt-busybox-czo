@@ -462,12 +462,6 @@ CONFIG_TARGET_DEVICE_ath79_generic_DEVICE_tplink_tl-wdr7500-v3=y
 CONFIG_TARGET_DEVICE_PACKAGES_ath79_generic_DEVICE_tplink_tl-wdr7500-v3=""
 CONFIG_TARGET_DEVICE_ath79_generic_DEVICE_tplink_tl-wpa8630-v1=y
 CONFIG_TARGET_DEVICE_PACKAGES_ath79_generic_DEVICE_tplink_tl-wpa8630-v1=""
-CONFIG_TARGET_DEVICE_ath79_generic_DEVICE_tplink_tl-wpa8630p-v2-int=y
-CONFIG_TARGET_DEVICE_PACKAGES_ath79_generic_DEVICE_tplink_tl-wpa8630p-v2-int=""
-CONFIG_TARGET_DEVICE_ath79_generic_DEVICE_tplink_tl-wpa8630p-v2.0-eu=y
-CONFIG_TARGET_DEVICE_PACKAGES_ath79_generic_DEVICE_tplink_tl-wpa8630p-v2.0-eu=""
-CONFIG_TARGET_DEVICE_ath79_generic_DEVICE_tplink_tl-wpa8630p-v2.1-eu=y
-CONFIG_TARGET_DEVICE_PACKAGES_ath79_generic_DEVICE_tplink_tl-wpa8630p-v2.1-eu=""
 CONFIG_TARGET_DEVICE_ath79_generic_DEVICE_tplink_tl-wr1043n-v5=y
 CONFIG_TARGET_DEVICE_PACKAGES_ath79_generic_DEVICE_tplink_tl-wr1043n-v5=""
 CONFIG_TARGET_DEVICE_ath79_generic_DEVICE_tplink_tl-wr1043nd-v1=y
@@ -586,12 +580,18 @@ CONFIG_TARGET_DEVICE_ath79_generic_DEVICE_wd_mynet-wifi-rangeextender=y
 CONFIG_TARGET_DEVICE_PACKAGES_ath79_generic_DEVICE_wd_mynet-wifi-rangeextender=""
 CONFIG_TARGET_DEVICE_ath79_generic_DEVICE_winchannel_wb2000=y
 CONFIG_TARGET_DEVICE_PACKAGES_ath79_generic_DEVICE_winchannel_wb2000=""
+CONFIG_TARGET_DEVICE_ath79_generic_DEVICE_xiaomi_aiot-ac2350=y
+CONFIG_TARGET_DEVICE_PACKAGES_ath79_generic_DEVICE_xiaomi_aiot-ac2350=""
 CONFIG_TARGET_DEVICE_ath79_generic_DEVICE_xiaomi_mi-router-4q=y
 CONFIG_TARGET_DEVICE_PACKAGES_ath79_generic_DEVICE_xiaomi_mi-router-4q=""
 CONFIG_TARGET_DEVICE_ath79_generic_DEVICE_yuncore_a770=y
 CONFIG_TARGET_DEVICE_PACKAGES_ath79_generic_DEVICE_yuncore_a770=""
 CONFIG_TARGET_DEVICE_ath79_generic_DEVICE_yuncore_a782=y
 CONFIG_TARGET_DEVICE_PACKAGES_ath79_generic_DEVICE_yuncore_a782=""
+CONFIG_TARGET_DEVICE_ath79_generic_DEVICE_yuncore_a930=y
+CONFIG_TARGET_DEVICE_PACKAGES_ath79_generic_DEVICE_yuncore_a930=""
+CONFIG_TARGET_DEVICE_ath79_generic_DEVICE_yuncore_xd3200=y
+CONFIG_TARGET_DEVICE_PACKAGES_ath79_generic_DEVICE_yuncore_xd3200=""
 CONFIG_TARGET_DEVICE_ath79_generic_DEVICE_yuncore_xd4200=y
 CONFIG_TARGET_DEVICE_PACKAGES_ath79_generic_DEVICE_yuncore_xd4200=""
 CONFIG_TARGET_DEVICE_ath79_generic_DEVICE_zbtlink_zbt-wd323=y
@@ -611,6 +611,7 @@ CONFIG_MODULE_DEFAULT_ath10k-firmware-qca9887-ct=y
 CONFIG_MODULE_DEFAULT_ath10k-firmware-qca9887-ct-full-htt=y
 CONFIG_MODULE_DEFAULT_ath10k-firmware-qca9888-ct=y
 CONFIG_MODULE_DEFAULT_ath10k-firmware-qca988x-ct=y
+CONFIG_MODULE_DEFAULT_ath10k-firmware-qca9984-ct=y
 CONFIG_MODULE_DEFAULT_ath10k-firmware-qca99x0-ct=y
 CONFIG_DEFAULT_base-files=y
 CONFIG_MODULE_DEFAULT_base-files=y
@@ -687,7 +688,6 @@ CONFIG_DEFAULT_odhcp6c=y
 CONFIG_MODULE_DEFAULT_odhcp6c=y
 CONFIG_DEFAULT_odhcpd-ipv6only=y
 CONFIG_MODULE_DEFAULT_odhcpd-ipv6only=y
-CONFIG_MODULE_DEFAULT_om-watchdog=y
 CONFIG_DEFAULT_opkg=y
 CONFIG_MODULE_DEFAULT_opkg=y
 CONFIG_DEFAULT_ppp=y
@@ -952,7 +952,7 @@ CONFIG_VERSIONOPT=y
 CONFIG_VERSION_DIST="OpenWrt"
 CONFIG_VERSION_NUMBER=""
 CONFIG_VERSION_CODE=""
-CONFIG_VERSION_REPO="https://downloads.openwrt.org/releases/21.02.1"
+CONFIG_VERSION_REPO="https://downloads.openwrt.org/releases/21.02.3"
 CONFIG_VERSION_HOME_URL=""
 CONFIG_VERSION_MANUFACTURER=""
 CONFIG_VERSION_MANUFACTURER_URL=""
@@ -2055,7 +2055,6 @@ CONFIG_PACKAGE_logd=y
 CONFIG_PACKAGE_mtd=y
 CONFIG_PACKAGE_netifd=y
 CONFIG_PACKAGE_nvram=m
-CONFIG_PACKAGE_om-watchdog=m
 CONFIG_PACKAGE_openwrt-keyring=y
 CONFIG_PACKAGE_opkg=y
 CONFIG_PACKAGE_procd=y
@@ -2087,11 +2086,13 @@ CONFIG_PACKAGE_ar3k-firmware=m
 CONFIG_PACKAGE_ath10k-board-qca9887=m
 CONFIG_PACKAGE_ath10k-board-qca9888=m
 CONFIG_PACKAGE_ath10k-board-qca988x=m
+CONFIG_PACKAGE_ath10k-board-qca9984=m
 CONFIG_PACKAGE_ath10k-board-qca99x0=m
 CONFIG_PACKAGE_ath10k-firmware-qca9887-ct=m
 CONFIG_PACKAGE_ath10k-firmware-qca9887-ct-full-htt=m
 CONFIG_PACKAGE_ath10k-firmware-qca9888-ct=m
 CONFIG_PACKAGE_ath10k-firmware-qca988x-ct=m
+CONFIG_PACKAGE_ath10k-firmware-qca9984-ct=m
 CONFIG_PACKAGE_ath10k-firmware-qca99x0-ct=m
 CONFIG_PACKAGE_ath9k-htc-firmware=m
 CONFIG_PACKAGE_b43legacy-firmware=m
@@ -2354,9 +2355,11 @@ CONFIG_PACKAGE_kmod-input-uinput=m
 CONFIG_PACKAGE_kmod-leds-gpio=m
 CONFIG_PACKAGE_kmod-leds-pca963x=m
 CONFIG_PACKAGE_kmod-leds-reset=m
+CONFIG_PACKAGE_kmod-leds-uleds=m
 CONFIG_PACKAGE_kmod-ledtrig-activity=m
 CONFIG_PACKAGE_kmod-ledtrig-gpio=m
 CONFIG_PACKAGE_kmod-ledtrig-oneshot=m
+CONFIG_PACKAGE_kmod-ledtrig-pattern=m
 CONFIG_PACKAGE_kmod-ledtrig-transient=m
 CONFIG_PACKAGE_kmod-asn1-decoder=m
 CONFIG_PACKAGE_kmod-lib-cordic=m
@@ -2413,6 +2416,7 @@ CONFIG_PACKAGE_kmod-ipt-condition=m
 CONFIG_PACKAGE_kmod-ipt-conntrack=y
 CONFIG_PACKAGE_kmod-ipt-conntrack-extra=m
 CONFIG_PACKAGE_kmod-ipt-conntrack-label=m
+CONFIG_PACKAGE_kmod-ipt-coova=m
 CONFIG_PACKAGE_kmod-ipt-core=y
 CONFIG_PACKAGE_kmod-ipt-debug=m
 CONFIG_PACKAGE_kmod-ipt-delude=m
@@ -2893,6 +2897,7 @@ CONFIG_ATH10K_LEDS=y
 CONFIG_PACKAGE_kmod-ath10k-ct=m
 CONFIG_ATH10K-CT_LEDS=y
 CONFIG_PACKAGE_kmod-ath10k-ct-smallbuffers=m
+CONFIG_PACKAGE_kmod-ath10k-smallbuffers=m
 CONFIG_PACKAGE_kmod-ath5k=m
 CONFIG_PACKAGE_kmod-ath6kl=m
 CONFIG_PACKAGE_kmod-ath6kl-sdio=m
@@ -2949,6 +2954,7 @@ CONFIG_PACKAGE_kmod-mac80211-hwsim=m
 CONFIG_PACKAGE_kmod-mt76=m
 CONFIG_PACKAGE_kmod-mt76-connac=m
 CONFIG_PACKAGE_kmod-mt76-core=m
+CONFIG_PACKAGE_kmod-mt76-sdio=m
 CONFIG_PACKAGE_kmod-mt76-usb=m
 CONFIG_PACKAGE_kmod-mt7601u=m
 CONFIG_PACKAGE_kmod-mt7603=m
@@ -2970,6 +2976,7 @@ CONFIG_PACKAGE_kmod-mt76x2-common=m
 CONFIG_PACKAGE_kmod-mt76x2u=m
 CONFIG_PACKAGE_kmod-mt7915e=m
 CONFIG_PACKAGE_kmod-mt7921e=m
+CONFIG_PACKAGE_kmod-mt7921s=m
 CONFIG_PACKAGE_kmod-mwifiex-pcie=m
 CONFIG_PACKAGE_kmod-mwifiex-sdio=m
 CONFIG_PACKAGE_kmod-mwl8k=m
@@ -3016,6 +3023,7 @@ CONFIG_PACKAGE_kmod-wl12xx=m
 CONFIG_PACKAGE_kmod-wl18xx=m
 CONFIG_PACKAGE_kmod-wlcore=m
 CONFIG_PACKAGE_kmod-zd1211rw=m
+CONFIG_PACKAGE_kmod-mt7921-common=m
 CONFIG_GOLANG_EXTERNAL_BOOTSTRAP_ROOT=""
 CONFIG_GOLANG_BUILD_CACHE_DIR=""
 # CONFIG_GOLANG_MOD_CACHE_WORLD_READABLE is not set
@@ -3067,7 +3075,8 @@ CONFIG_WOLFSSL_HAS_SESSION_TICKET=y
 # CONFIG_WOLFSSL_HAS_DTLS is not set
 CONFIG_WOLFSSL_HAS_OCSP=y
 CONFIG_WOLFSSL_HAS_WPAS=y
-# CONFIG_WOLFSSL_HAS_ECC25519 is not set
+CONFIG_WOLFSSL_HAS_ECC25519=y
+CONFIG_WOLFSSL_ALT_NAMES=y
 CONFIG_WOLFSSL_HAS_NO_HW=y
 # CONFIG_WOLFSSL_HAS_AFALG is not set
 # CONFIG_WOLFSSL_HAS_DEVCRYPTO_CBC is not set
@@ -3104,6 +3113,7 @@ CONFIG_LUCI_CSSTIDY=y
 # CONFIG_LUCI_LANG_bn_BD is not set
 # CONFIG_LUCI_LANG_ca is not set
 # CONFIG_LUCI_LANG_cs is not set
+# CONFIG_LUCI_LANG_da is not set
 # CONFIG_LUCI_LANG_de is not set
 # CONFIG_LUCI_LANG_el is not set
 # CONFIG_LUCI_LANG_en is not set
@@ -3256,7 +3266,9 @@ CONFIG_BUSYBOX_CONFIG_FEATURE_DEVPTS=y
 # CONFIG_BUSYBOX_CONFIG_FEATURE_UTMP is not set
 CONFIG_BUSYBOX_CONFIG_FEATURE_PIDFILE=y
 CONFIG_BUSYBOX_CONFIG_PID_FILE_PATH="/var/run"
-# CONFIG_BUSYBOX_CONFIG_BUSYBOX is not set
+CONFIG_BUSYBOX_CONFIG_BUSYBOX=y
+# CONFIG_BUSYBOX_CONFIG_FEATURE_SHOW_SCRIPT is not set
+# CONFIG_BUSYBOX_CONFIG_FEATURE_INSTALLER is not set
 # CONFIG_BUSYBOX_CONFIG_INSTALL_NO_USR is not set
 # CONFIG_BUSYBOX_CONFIG_FEATURE_SUID is not set
 CONFIG_BUSYBOX_CONFIG_FEATURE_PREFER_APPLETS=y

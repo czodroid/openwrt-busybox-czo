@@ -20,8 +20,9 @@ Recompile BusyBox with
  xxd,
  arping,
  hostname,
- telnet
- and editing savehistory, that are not provided with Openwrt.
+ telnet,
+ editing savehistory
+ and busybox applet, that are not provided with openwrt's busybox.
 
 ### Size
 
@@ -33,10 +34,10 @@ For busybox 1.30.1 on OpenWrt 19.07.6, its size is 10% bigger,
 -rwxr-xr-x 1 root root 299061 2021-01-19 14:10 /rom/bin/busybox
 -rwxr-xr-x 1 root root 327733 2021-01-19 14:10 /overlay/upper/bin/busybox
 ```
-and it's the same size (?) for busybox 1.33.1 on OpenWrt 21.02.1
+and it's the same size (?) for busybox 1.33.2 on OpenWrt 21.02.3
 ```
--rwxr-xr-x    1 root     root        323621 Oct 25 21:44 /overlay/upper/bin/busybox
--rwxr-xr-x    1 root     root        323621 Oct 24 11:01 /rom/bin/busybox
+-rwxr-xr-x    1 root     root        323621 Apr 17 21:00 /overlay/upper/bin/busybox
+-rwxr-xr-x    1 root     root        323621 Apr 16 14:59 /rom/bin/busybox
 ```
 
 I don't know why the openwrt team doesn't add these commands...
@@ -54,28 +55,29 @@ documentation.
 
 ### Quickstart for TP-Link Archer C7 v2
 
-For busybox 1.33.1 on OpenWrt 21.02.1
+For busybox 1.33.2 on OpenWrt 21.02.3
 
-Download the SDK, untar it and cd to it. Then run `feeds` to obtain all the latest package definitions and get busybox, then run `usign` to get a key-build, then copy .config.ow.czo (my defition of BusyBox), then make!
+Download the SDK, untar it, mv it to a small name, and cd to it. Then run `feeds` to obtain all the latest package definitions and get busybox, then run `usign` to get a key-build, then copy .config.ow.czo (my defition of BusyBox), then make!
 
 ```
-wget https://downloads.openwrt.org/releases/21.02.1/targets/ath79/generic/openwrt-sdk-21.02.1-ath79-generic_gcc-8.4.0_musl.Linux-x86_64.tar.xz
-tar -xf openwrt-sdk-21.02.1-ath79-generic_gcc-8.4.0_musl.Linux-x86_64.tar.xz
-cd openwrt-sdk-21.02.1-ath79-generic_gcc-8.4.0_musl.Linux-x86_64
+wget https://downloads.openwrt.org/releases/21.02.3/targets/ath79/generic/openwrt-sdk-21.02.3-ath79-generic_gcc-8.4.0_musl.Linux-x86_64.tar.xz
+tar -xf openwrt-sdk-21.02.3-ath79-generic_gcc-8.4.0_musl.Linux-x86_64.tar.xz
+mv openwrt-sdk-21.02.3-ath79-generic_gcc-8.4.0_musl.Linux-x86_64 owrt
+cd owrt
 ./scripts/feeds update -a
 ./scripts/feeds install busybox
 ./staging_dir/host/bin/usign -G -s ./key-build -p ./key-build.pub -c "Local build key"
 cp ../.config.ow.czo .config
-perl -i -pe 's,^PKG_RELEASE:=.*$,PKG_RELEASE:=99,' package/feeds/base/busybox/Makefile
+perl -i -pe 's,^PKG_RELEASE:=.*$,PKG_RELEASE:=42,' package/feeds/base/busybox/Makefile
 make package/busybox/compile
 ```
 
-The package is in `bin/packages/mips_24kc/base/busybox_1.33.1-99_mips_24kc.ipk`.
+The package is in `bin/packages/mips_24kc/base/busybox_1.33.1-42_mips_24kc.ipk`.
 
 Copy it to your OpenWRT
- `scp bin/packages/mips_24kc/base/busybox_1.33.1-99_mips_24kc.ipk root@routeur-marion:/tmp/busybox_1.33.1-99_mips_24kc.ipk`
+ `scp bin/packages/mips_24kc/base/busybox_1.33.2-42_mips_24kc.ipk root@routeur-marion:/tmp/`
 and install it
- `opkg install /tmp/busybox_1.33.1-99_mips_24kc.ipk`
+ `opkg install /tmp/busybox_1.33.2-42_mips_24kc.ipk`
   !!!
 
 ## OpenWrt links
