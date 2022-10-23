@@ -3,9 +3,8 @@ Filename: README.md
 Author: Olivier Sirol <czo@free.fr>
 License: GPL-2.0 (http://www.gnu.org/copyleft)
 File Created: nov. 2018
-Last Modified: samedi 18 décembre 2021, 16:59
+Last Modified: Wednesday 19 October 2022, 18:50
 Edit Time: 2:00:44
-$Id:$
 -->
 
 ## New BusyBox for OpenWRT
@@ -28,16 +27,12 @@ Recompile BusyBox with
 
 Doing a `ls -al /rom/bin/busybox /overlay/upper/bin/busybox` you can know the size of BusyBox.
 
-For busybox 1.30.1 on OpenWrt 19.07.6, its size is 10% bigger,
+For busybox 1.33.2 on OpenWrt 21.02.5, its size is 2% bigger,
 
 ```
--rwxr-xr-x 1 root root 299061 2021-01-19 14:10 /rom/bin/busybox
--rwxr-xr-x 1 root root 327733 2021-01-19 14:10 /overlay/upper/bin/busybox
-```
-and it's the same size (?) for busybox 1.33.2 on OpenWrt 21.02.3
-```
--rwxr-xr-x    1 root     root        323621 Apr 17 21:00 /overlay/upper/bin/busybox
--rwxr-xr-x    1 root     root        323621 Apr 16 14:59 /rom/bin/busybox
+-rwxr-xr-x    1 root     root        327717 2022-10-15 15:02:44 +0200 /overlay/upper/bin/busybox
+-rwxr-xr-x    1 root     root        323621 2022-10-13 21:16:38 +0200 /rom/bin/busybox
+
 ```
 
 I don't know why the openwrt team doesn't add these commands...
@@ -55,14 +50,14 @@ documentation.
 
 ### Quickstart for TP-Link Archer C7 v2
 
-For busybox 1.33.2 on OpenWrt 21.02.3
+For busybox 1.33.2 on OpenWrt 21.02.5
 
 Download the SDK, untar it, mv it to a small name, and cd to it. Then run `feeds` to obtain all the latest package definitions and get busybox, then run `usign` to get a key-build, then copy .config.ow.czo (my defition of BusyBox), then make!
 
 ```
-wget https://downloads.openwrt.org/releases/21.02.3/targets/ath79/generic/openwrt-sdk-21.02.3-ath79-generic_gcc-8.4.0_musl.Linux-x86_64.tar.xz
-tar -xf openwrt-sdk-21.02.3-ath79-generic_gcc-8.4.0_musl.Linux-x86_64.tar.xz
-mv openwrt-sdk-21.02.3-ath79-generic_gcc-8.4.0_musl.Linux-x86_64 owrt
+wget https://downloads.openwrt.org/releases/21.02.5/targets/ath79/generic/openwrt-sdk-21.02.5-ath79-generic_gcc-8.4.0_musl.Linux-x86_64.tar.xz
+tar -xf openwrt-sdk-21.02.5-ath79-generic_gcc-8.4.0_musl.Linux-x86_64.tar.xz
+mv openwrt-sdk-21.02.5-ath79-generic_gcc-8.4.0_musl.Linux-x86_64 owrt
 cd owrt
 ./scripts/feeds update -a
 ./scripts/feeds install busybox
