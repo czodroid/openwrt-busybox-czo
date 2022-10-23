@@ -3,7 +3,7 @@ Filename: README.md
 Author: Olivier Sirol <czo@free.fr>
 License: GPL-2.0 (http://www.gnu.org/copyleft)
 File Created: nov. 2018
-Last Modified: Wednesday 19 October 2022, 18:50
+Last Modified: Sunday 23 October 2022, 12:29
 Edit Time: 2:00:44
 -->
 
@@ -30,8 +30,8 @@ Doing a `ls -al /rom/bin/busybox /overlay/upper/bin/busybox` you can know the si
 For busybox 1.33.2 on OpenWrt 21.02.5, its size is 2% bigger,
 
 ```
--rwxr-xr-x    1 root     root        327717 2022-10-15 15:02:44 +0200 /overlay/upper/bin/busybox
--rwxr-xr-x    1 root     root        323621 2022-10-13 21:16:38 +0200 /rom/bin/busybox
+-rwxr-xr-x    1 root    root    327717 2022-10-15 15:02:44 /overlay/upper/bin/busybox
+-rwxr-xr-x    1 root    root    323621 2022-10-13 21:16:38 /rom/bin/busybox
 
 ```
 
@@ -67,10 +67,10 @@ perl -i -pe 's,^PKG_RELEASE:=.*$,PKG_RELEASE:=42,' package/feeds/base/busybox/Ma
 make package/busybox/compile
 ```
 
-The package is in `bin/packages/mips_24kc/base/busybox_1.33.1-42_mips_24kc.ipk`.
+The package is in `bin/packages/mips_24kc/base/busybox_1.33.2-42_mips_24kc.ipk`.
 
 Copy it to your OpenWRT
- `scp bin/packages/mips_24kc/base/busybox_1.33.2-42_mips_24kc.ipk root@routeur-marion:/tmp/`
+ `scp bin/packages/mips_24kc/base/busybox_1.33.2-42_mips_24kc.ipk root@sw-marion:/tmp/`
 and install it
  `opkg install /tmp/busybox_1.33.2-42_mips_24kc.ipk`
   !!!
