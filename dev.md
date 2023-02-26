@@ -3,12 +3,17 @@ Filename: dev.md
 Author: Olivier Sirol <czo@free.fr>
 License: GPL-2.0 (http://www.gnu.org/copyleft)
 File Created: nov. 2018
-Last Modified: Sunday 23 October 2022, 12:27
+Last Modified: Sunday 26 February 2023, 16:21
 Edit Time: 0:05:44
 -->
 
 # start
 
+
+```
+tar -xf openwrt-sdk-22.03.3-ath79-generic_gcc-11.2.0_musl.Linux-x86_64.tar.xz
+mv openwrt-sdk-22.03.3-ath79-generic_gcc-11.2.0_musl.Linux-x86_64 owrt
+```
 
 ```
 cd owrt
@@ -36,7 +41,7 @@ vimdiff .config ../.config.ow.czo
 # make
 
 ```
-perl -i -pe 's,^PKG_RELEASE:=.*$,PKG_RELEASE:=52,' package/feeds/base/busybox/Makefile
+perl -i -pe 's,^PKG_RELEASE:=.*$,PKG_RELEASE:=64,' package/feeds/base/busybox/Makefile
 make package/busybox/compile
 ```
 
