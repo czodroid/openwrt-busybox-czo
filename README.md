@@ -3,8 +3,8 @@ Filename: README.md
 Author: Olivier Sirol <czo@free.fr>
 License: GPL-2.0 (http://www.gnu.org/copyleft)
 File Created: nov. 2018
-Last Modified: Sunday 26 February 2023, 16:26
-Edit Time: 2:00:44
+Last Modified: Saturday 07 October 2023, 16:31
+Edit Time: 2:01:53
 -->
 
 ## New BusyBox for OpenWRT
@@ -27,7 +27,7 @@ Recompile BusyBox with
 
 Doing a `ls -al /rom/bin/busybox /overlay/upper/bin/busybox` you can know the size of BusyBox.
 
-For busybox 1.35.0 on OpenWrt 22.03.3, its size is 2% bigger,
+For busybox 1.35.0 on OpenWrt 22.03.5, its size is 2% bigger,
 
 ```
 -rwxr-xr-x 1 root root 327717 2023-01-03 22:03 overlay/upper/bin/busybox
@@ -49,20 +49,21 @@ documentation.
 
 ### Quickstart for TP-Link Archer C7 v2
 
-For busybox 1.35.0 on OpenWrt 22.03.3
+For busybox 1.35.0 on OpenWrt 22.03.5
 
 Download the SDK, untar it, mv it to a small name, and cd to it. Then run `feeds` to obtain all the latest package definitions and get busybox, then run `usign` to get a key-build, then copy .config.ow.czo (my defition of BusyBox), then make!
 
 ```
-wget https://downloads.openwrt.org/releases/22.03.3/targets/ath79/generic/openwrt-sdk-22.03.3-ath79-generic_gcc-11.2.0_musl.Linux-x86_64.tar.xz
-tar -xf openwrt-sdk-22.03.3-ath79-generic_gcc-11.2.0_musl.Linux-x86_64.tar.xz
-mv openwrt-sdk-22.03.3-ath79-generic_gcc-11.2.0_musl.Linux-x86_64 owrt
+wget https://downloads.openwrt.org/releases/22.03.5/targets/ath79/generic/openwrt-sdk-22.03.5-ath79-generic_gcc-11.2.0_musl.Linux-x86_64.tar.xz
+tar -xf openwrt-sdk-22.03.5-ath79-generic_gcc-11.2.0_musl.Linux-x86_64.tar.xz
+mv openwrt-sdk-22.03.5-ath79-generic_gcc-11.2.0_musl.Linux-x86_64 owrt
 cd owrt
 ./scripts/feeds update -a
 ./scripts/feeds install busybox
 ./staging_dir/host/bin/usign -G -s ./key-build -p ./key-build.pub -c "Local build key"
-cp ../.config.ow.czo .config
 perl -i -pe 's,^PKG_RELEASE:=.*$,PKG_RELEASE:=42,' package/feeds/base/busybox/Makefile
+
+cp ../.config.ow.czo .config
 make package/busybox/compile
 ```
 
