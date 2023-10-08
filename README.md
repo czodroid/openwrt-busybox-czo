@@ -3,8 +3,8 @@ Filename: README.md
 Author: Olivier Sirol <czo@free.fr>
 License: GPL-2.0 (http://www.gnu.org/copyleft)
 File Created: nov. 2018
-Last Modified: Saturday 07 October 2023, 16:31
-Edit Time: 2:01:53
+Last Modified: Sunday 08 October 2023, 11:44
+Edit Time: 2:04:30
 -->
 
 ## New BusyBox for OpenWRT
@@ -27,11 +27,11 @@ Recompile BusyBox with
 
 Doing a `ls -al /rom/bin/busybox /overlay/upper/bin/busybox` you can know the size of BusyBox.
 
-For busybox 1.35.0 on OpenWrt 22.03.5, its size is 2% bigger,
+For busybox 1.35.0 on OpenWrt 22.03.5, its size is 1.2% bigger,
 
 ```
--rwxr-xr-x 1 root root 327717 2023-01-03 22:03 overlay/upper/bin/busybox
--rwxr-xr-x 1 root root 323621 2023-01-03 01:24 rom/bin/busybox
+-rwxr-xr-x 1 root root 327717 2023-04-27 23:05 overlay/upper/bin/busybox
+-rwxr-xr-x 1 root root 323621 2023-04-27 22:28 rom/bin/busybox
 ```
 
 I don't know why the openwrt team doesn't add these commands...
