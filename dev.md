@@ -3,26 +3,27 @@ Filename: dev.md
 Author: Olivier Sirol <czo@free.fr>
 License: GPL-2.0 (http://www.gnu.org/copyleft)
 File Created: nov. 2018
-Last Modified: Sunday 26 February 2023, 16:21
-Edit Time: 0:05:44
+Last Modified: Wednesday 15 November 2023, 22:21
+Edit Time: 0:19:47
 -->
 
 # start
 
+get the right link:
 
 ```
-tar -xf openwrt-sdk-22.03.3-ath79-generic_gcc-11.2.0_musl.Linux-x86_64.tar.xz
-mv openwrt-sdk-22.03.3-ath79-generic_gcc-11.2.0_musl.Linux-x86_64 owrt
+wget https://downloads.openwrt.org/releases/23.05.0/targets/ath79/generic/openwrt-sdk-23.05.0-ath79-generic_gcc-12.3.0_musl.Linux-x86_64.tar.xz
+tar -xf openwrt-sdk-23.05.0-ath79-generic_gcc-12.3.0_musl.Linux-x86_64.tar.xz
+mv openwrt-sdk-23.05.0-ath79-generic_gcc-12.3.0_musl.Linux-x86_64 owrt
 ```
+
+then:
 
 ```
 cd owrt
 ./scripts/feeds update -a
 ./scripts/feeds install busybox
 ./staging_dir/host/bin/usign -G -s ./key-build -p ./key-build.pub -c "Local build key"
-```
-
-```
 cd ..
 rsync -av owrt/ ooo
 cd owrt
@@ -41,7 +42,9 @@ vimdiff .config ../.config.ow.czo
 # make
 
 ```
-perl -i -pe 's,^PKG_RELEASE:=.*$,PKG_RELEASE:=64,' package/feeds/base/busybox/Makefile
+perl -i -pe 's,^PKG_RELEASE:=.*$,PKG_RELEASE:=30,' package/feeds/base/busybox/Makefile
+
+cp -f ../.config.ow.czo .config
 make package/busybox/compile
 ```
 
