@@ -3,8 +3,8 @@ Filename: README.md
 Author: Olivier Sirol <czo@free.fr>
 License: GPL-2.0 (http://www.gnu.org/copyleft)
 File Created: nov. 2018
-Last Modified: Wednesday 15 November 2023, 20:22
-Edit Time: 2:16:32
+Last Modified: Saturday 18 November 2023, 16:14
+Edit Time: 2:24:24
 -->
 
 ## New BusyBox for OpenWRT
@@ -25,13 +25,13 @@ Recompile BusyBox with
 
 ### Size
 
-Doing a `ls -al /rom/bin/busybox /overlay/upper/bin/busybox` you can know the size of BusyBox.
+Doing a `ls -al overlay/upper/bin/busybox rom/bin/busybox` you can know the size of BusyBox.
 
-For busybox 1.35.0 on OpenWrt 23.05.0, its size is 1.2% bigger,
+For busybox 1.36.0 on OpenWrt 23.05.0, its size is 20% bigger,
 
 ```
--rwxr-xr-x 1 root root 327717 2023-04-27 23:05 overlay/upper/bin/busybox
--rwxr-xr-x 1 root root 323621 2023-04-27 22:28 rom/bin/busybox
+-rwxr-xr-x 1 root root 393253 2023-05-24 20:26 overlay/upper/bin/busybox
+-rwxr-xr-x 1 root root 327717 2023-10-09 23:45 rom/bin/busybox
 ```
 
 I don't know why the openwrt team doesn't add these commands...
@@ -49,7 +49,7 @@ documentation.
 
 ### Quickstart for TP-Link Archer C7 v2
 
-For busybox 1.35.0 on OpenWrt 23.05.0
+For busybox 1.36.0 on OpenWrt 23.05.0
 
 Download the SDK, untar it, mv it to a small name, and cd to it. Then run `feeds` to obtain all the latest package definitions and get busybox, then run `usign` to get a key-build, then copy .config.ow.czo (my defition of BusyBox), then make!
 
@@ -67,12 +67,12 @@ cp ../.config.ow.czo .config
 make package/busybox/compile
 ```
 
-The package is in `bin/packages/mips_24kc/base/busybox_1.35.0-42_mips_24kc.ipk`.
+The package is in `bin/packages/mips_24kc/base/busybox_1.36.1-42_mips_24kc.ipk`.
 
 Copy it to your OpenWRT
- `scp bin/packages/mips_24kc/base/busybox_1.35.0-42_mips_24kc.ipk root@sw-marion:/tmp/`
+ `scp bin/packages/mips_24kc/base/busybox_1.36.1-42_mips_24kc.ipk root@sw-marion:/tmp/`
 and install it
- `opkg install /tmp/busybox_1.35.0-42_mips_24kc.ipk`
+ `opkg install /tmp/busybox_1.36.1-42_mips_24kc.ipk`
   !!!
 
 ## OpenWrt links
