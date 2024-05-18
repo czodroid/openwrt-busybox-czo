@@ -3,8 +3,8 @@ Filename: README.md
 Author: Olivier Sirol <czo@free.fr>
 License: GPL-2.0 (http://www.gnu.org/copyleft)
 File Created: nov. 2018
-Last Modified: Saturday 18 November 2023, 20:23
-Edit Time: 2:25:52
+Last Modified: Saturday 18 May 2024, 16:43
+Edit Time: 2:27:30
 -->
 
 ## New BusyBox for OpenWRT
@@ -25,17 +25,26 @@ Recompile BusyBox with
 
 ### Size
 
-Doing a `ls -al overlay/upper/bin/busybox rom/bin/busybox` you can know the size of BusyBox.
+Doing a `ls -al /overlay/upper/bin/busybox /rom/bin/busybox` you can know the size of BusyBox.
 
-For busybox 1.36.1 on OpenWrt 23.05.2, its size is 20% bigger,
+For busybox 1.36.1 on OpenWrt 23.05.3, its size is 20% bigger,
 
 ```
--rwxr-xr-x 1 root root 393253 2023-05-24 20:26 overlay/upper/bin/busybox
--rwxr-xr-x 1 root root 327717 2023-10-09 23:45 rom/bin/busybox
+-rwxr-xr-x    1 root     root        393253 May 24  2023 /overlay/upper/bin/busybox
+-rwxr-xr-x    1 root     root        327717 Mar 22 23:09 /rom/bin/busybox
 ```
 
 I don't know why the openwrt team doesn't add these commands...
 
+## Binaries for TP-Link Archer C7 v2
+
+You can download my new busybox for TP-Link Archer C7 v2 on my [Releases page](https://github.com/czodroid/openwrt-busybox-czo/releases).
+
+Copy it to your OpenWRT
+ `scp busybox_1.36.1-42_mips_24kc.ipk root@sw-marion:/tmp/`
+and install it on your router
+ `opkg install /tmp/busybox_1.36.1-42_mips_24kc.ipk`
+  !!!
 
 ## Compiling
 
@@ -49,14 +58,14 @@ documentation.
 
 ### Quickstart for TP-Link Archer C7 v2
 
-For busybox 1.36.1 on OpenWrt 23.05.2
+For busybox 1.36.1 on OpenWrt 23.05.3
 
 Download the SDK, untar it, mv it to a small name, and cd to it. Then run `feeds` to obtain all the latest package definitions and get busybox, then run `usign` to get a key-build, then copy .config.ow.czo (my defition of BusyBox), then make!
 
 ```
-wget https://downloads.openwrt.org/releases/23.05.2/targets/ath79/generic/openwrt-sdk-23.05.2-ath79-generic_gcc-12.3.0_musl.Linux-x86_64.tar.xz
-tar -xf openwrt-sdk-23.05.2-ath79-generic_gcc-12.3.0_musl.Linux-x86_64.tar.xz
-mv openwrt-sdk-23.05.2-ath79-generic_gcc-12.3.0_musl.Linux-x86_64 owrt
+wget https://downloads.openwrt.org/releases/23.05.3/targets/ath79/generic/openwrt-sdk-23.05.3-ath79-generic_gcc-12.3.0_musl.Linux-x86_64.tar.xz
+tar -xf openwrt-sdk-23.05.3-ath79-generic_gcc-12.3.0_musl.Linux-x86_64.tar.xz
+mv openwrt-sdk-23.05.3-ath79-generic_gcc-12.3.0_musl.Linux-x86_64 owrt
 cd owrt
 ./scripts/feeds update -a
 ./scripts/feeds install busybox
@@ -71,7 +80,7 @@ The package is in `bin/packages/mips_24kc/base/busybox_1.36.1-42_mips_24kc.ipk`.
 
 Copy it to your OpenWRT
  `scp bin/packages/mips_24kc/base/busybox_1.36.1-42_mips_24kc.ipk root@sw-marion:/tmp/`
-and install it
+and install it on your router
  `opkg install /tmp/busybox_1.36.1-42_mips_24kc.ipk`
   !!!
 

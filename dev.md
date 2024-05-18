@@ -3,8 +3,8 @@ Filename: dev.md
 Author: Olivier Sirol <czo@free.fr>
 License: GPL-2.0 (http://www.gnu.org/copyleft)
 File Created: nov. 2018
-Last Modified: Saturday 18 November 2023, 19:49
-Edit Time: 0:21:36
+Last Modified: Saturday 18 May 2024, 15:35
+Edit Time: 0:22:54
 -->
 
 # start
@@ -12,9 +12,9 @@ Edit Time: 0:21:36
 get the right link:
 
 ```
-wget https://downloads.openwrt.org/releases/23.05.2/targets/ath79/generic/openwrt-sdk-23.05.2-ath79-generic_gcc-12.3.0_musl.Linux-x86_64.tar.xz
-tar -xf openwrt-sdk-23.05.2-ath79-generic_gcc-12.3.0_musl.Linux-x86_64.tar.xz
-mv openwrt-sdk-23.05.2-ath79-generic_gcc-12.3.0_musl.Linux-x86_64 owrt
+wget https://downloads.openwrt.org/releases/23.05.3/targets/ath79/generic/openwrt-sdk-23.05.3-ath79-generic_gcc-12.3.0_musl.Linux-x86_64.tar.xz
+tar -xf openwrt-sdk-23.05.3-ath79-generic_gcc-12.3.0_musl.Linux-x86_64.tar.xz
+mv openwrt-sdk-23.05.3-ath79-generic_gcc-12.3.0_musl.Linux-x86_64 owrt
 cd owrt
 ./scripts/feeds update -a
 ./scripts/feeds install busybox
