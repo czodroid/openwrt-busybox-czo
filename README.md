@@ -3,8 +3,8 @@ Filename: README.md
 Author: Olivier Sirol <czo@free.fr>
 License: GPL-2.0 (http://www.gnu.org/copyleft)
 File Created: nov. 2018
-Last Modified: Saturday 18 May 2024, 16:43
-Edit Time: 2:27:30
+Last Modified: Saturday 18 May 2024, 16:55
+Edit Time: 2:28:53
 -->
 
 ## New BusyBox for OpenWRT
@@ -23,6 +23,16 @@ Recompile BusyBox with
  editing savehistory
  and busybox applet, that are not provided with openwrt's busybox.
 
+## Binaries for TP-Link Archer C7 v2
+
+You can download my new busybox for TP-Link Archer C7 v2 on my [Releases page](https://github.com/czodroid/openwrt-busybox-czo/releases).
+
+Copy it to your OpenWRT
+ `scp busybox_1.36.1-42_mips_24kc.ipk root@sw-marion:/tmp/`
+and install it on your router
+ `opkg install /tmp/busybox_1.36.1-42_mips_24kc.ipk`
+and `reboot` it!
+
 ### Size
 
 Doing a `ls -al /overlay/upper/bin/busybox /rom/bin/busybox` you can know the size of BusyBox.
@@ -35,16 +45,6 @@ For busybox 1.36.1 on OpenWrt 23.05.3, its size is 20% bigger,
 ```
 
 I don't know why the openwrt team doesn't add these commands...
-
-## Binaries for TP-Link Archer C7 v2
-
-You can download my new busybox for TP-Link Archer C7 v2 on my [Releases page](https://github.com/czodroid/openwrt-busybox-czo/releases).
-
-Copy it to your OpenWRT
- `scp busybox_1.36.1-42_mips_24kc.ipk root@sw-marion:/tmp/`
-and install it on your router
- `opkg install /tmp/busybox_1.36.1-42_mips_24kc.ipk`
-  !!!
 
 ## Compiling
 
@@ -82,7 +82,7 @@ Copy it to your OpenWRT
  `scp bin/packages/mips_24kc/base/busybox_1.36.1-42_mips_24kc.ipk root@sw-marion:/tmp/`
 and install it on your router
  `opkg install /tmp/busybox_1.36.1-42_mips_24kc.ipk`
-  !!!
+and `reboot` it!
 
 ## OpenWrt links
 
