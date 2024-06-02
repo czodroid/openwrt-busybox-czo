@@ -3,7 +3,7 @@ Filename: README.md
 Author: Olivier Sirol <czo@free.fr>
 License: GPL-2.0 (http://www.gnu.org/copyleft)
 File Created: nov. 2018
-Last Modified: Saturday 1 June 2024, 20:02
+Last Modified: Saturday 1 June 2024, 20:58
 Edit Time: 2:28:53
 -->
 
@@ -67,12 +67,13 @@ Download the SDK, untar it, mv it to a small name, and cd to it. Then run `feeds
 wget https://downloads.openwrt.org/releases/23.05.3/targets/ath79/generic/openwrt-sdk-23.05.3-ath79-generic_gcc-12.3.0_musl.Linux-x86_64.tar.xz
 tar -xf openwrt-sdk-23.05.3-ath79-generic_gcc-12.3.0_musl.Linux-x86_64.tar.xz
 mv openwrt-sdk-23.05.3-ath79-generic_gcc-12.3.0_musl.Linux-x86_64 owrt
+
 cd owrt
 ./scripts/feeds update -a
 ./scripts/feeds install busybox
 ./staging_dir/host/bin/usign -G -s ./key-build -p ./key-build.pub -c "Local build key"
-perl -i -pe 's,^PKG_RELEASE:=.*$,PKG_RELEASE:=42,' package/feeds/base/busybox/Makefile
 
+perl -i -pe 's,^PKG_RELEASE:=.*$,PKG_RELEASE:=42,' package/feeds/base/busybox/Makefile
 cp ../.config.ow.czo .config
 make package/busybox/compile
 ```
@@ -100,7 +101,7 @@ cd owrt
 cd ..
 rsync -av owrt/ ooo
 cd owrt
-make menu-config
+make menuconfig
 ```
 
 Base system -->
