@@ -831,6 +831,10 @@ CONFIG_MODULE_DEFAULT_firewall4=y
 CONFIG_MODULE_DEFAULT_fritz-tffs=y
 CONFIG_DEFAULT_fstools=y
 CONFIG_MODULE_DEFAULT_fstools=y
+CONFIG_MODULE_DEFAULT_ipq-wifi-tplink_archer-c59-v1=y
+CONFIG_MODULE_DEFAULT_ipq-wifi-tplink_archer-c6-v2=y
+CONFIG_MODULE_DEFAULT_ipq-wifi-tplink_archer-c60-v1=y
+CONFIG_MODULE_DEFAULT_ipq-wifi-xiaomi_aiot-ac2350=y
 CONFIG_DEFAULT_iwinfo=y
 CONFIG_MODULE_DEFAULT_iwinfo=y
 CONFIG_MODULE_DEFAULT_kmod-ath10k-ct=y
@@ -1184,7 +1188,7 @@ CONFIG_VERSIONOPT=y
 CONFIG_VERSION_DIST="OpenWrt"
 CONFIG_VERSION_NUMBER=""
 CONFIG_VERSION_CODE=""
-CONFIG_VERSION_REPO="https://downloads.openwrt.org/releases/24.10.1"
+CONFIG_VERSION_REPO="https://downloads.openwrt.org/releases/24.10.4"
 CONFIG_VERSION_HOME_URL=""
 CONFIG_VERSION_MANUFACTURER=""
 CONFIG_VERSION_MANUFACTURER_URL=""
@@ -2350,6 +2354,49 @@ CONFIG_NETJSON_MONITORING_IWINFO=y
 # CONFIG_SCHROOT_UUID is not set
 CONFIG_PACKAGE_u-boot-qca9558_nec_aterm=y
 CONFIG_PACKAGE_libiwinfo-data=y
+CONFIG_PACKAGE_ipq-wifi-8devices_mango=m
+CONFIG_PACKAGE_ipq-wifi-arcadyan_aw1000=m
+CONFIG_PACKAGE_ipq-wifi-asus_rt-ax89x=m
+CONFIG_PACKAGE_ipq-wifi-buffalo_wxr-5950ax12=m
+CONFIG_PACKAGE_ipq-wifi-cambiumnetworks_xe34=m
+CONFIG_PACKAGE_ipq-wifi-cmcc_rm2-6=m
+CONFIG_PACKAGE_ipq-wifi-compex_wpq873=m
+CONFIG_PACKAGE_ipq-wifi-dynalink_dl-wrx36=m
+CONFIG_PACKAGE_ipq-wifi-edgecore_eap102=m
+CONFIG_PACKAGE_ipq-wifi-edimax_cax1800=m
+CONFIG_PACKAGE_ipq-wifi-linksys_homewrk=m
+CONFIG_PACKAGE_ipq-wifi-linksys_mx4200=m
+CONFIG_PACKAGE_ipq-wifi-linksys_mx5300=m
+CONFIG_PACKAGE_ipq-wifi-linksys_mx8500=m
+CONFIG_PACKAGE_ipq-wifi-linksys_whw03=m
+CONFIG_PACKAGE_ipq-wifi-netgear_lbr20=m
+CONFIG_PACKAGE_ipq-wifi-netgear_rax120v2=m
+CONFIG_PACKAGE_ipq-wifi-netgear_sxk80=m
+CONFIG_PACKAGE_ipq-wifi-netgear_wax214=m
+CONFIG_PACKAGE_ipq-wifi-netgear_wax218=m
+CONFIG_PACKAGE_ipq-wifi-netgear_wax620=m
+CONFIG_PACKAGE_ipq-wifi-netgear_wax630=m
+CONFIG_PACKAGE_ipq-wifi-prpl_haze=m
+CONFIG_PACKAGE_ipq-wifi-qnap_301w=m
+CONFIG_PACKAGE_ipq-wifi-redmi_ax6=m
+CONFIG_PACKAGE_ipq-wifi-skspruce_wia3300-20=m
+CONFIG_PACKAGE_ipq-wifi-spectrum_sax1v1k=m
+CONFIG_PACKAGE_ipq-wifi-tplink_archer-c59-v1=m
+CONFIG_PACKAGE_ipq-wifi-tplink_archer-c6-v2=m
+CONFIG_PACKAGE_ipq-wifi-tplink_archer-c60-v1=m
+CONFIG_PACKAGE_ipq-wifi-tplink_eap660hd-v1=m
+CONFIG_PACKAGE_ipq-wifi-wallys_dr40x9=m
+CONFIG_PACKAGE_ipq-wifi-xiaomi_aiot-ac2350=m
+CONFIG_PACKAGE_ipq-wifi-xiaomi_ax3600=m
+CONFIG_PACKAGE_ipq-wifi-xiaomi_ax9000=m
+CONFIG_PACKAGE_ipq-wifi-yuncore_ax880=m
+CONFIG_PACKAGE_ipq-wifi-yuncore_fap650=m
+CONFIG_PACKAGE_ipq-wifi-yyets_le1=m
+CONFIG_PACKAGE_ipq-wifi-zbtlink_zbt-z800ax=m
+CONFIG_PACKAGE_ipq-wifi-zte_mf269=m
+CONFIG_PACKAGE_ipq-wifi-zte_mf287=m
+CONFIG_PACKAGE_ipq-wifi-zte_mf287plus=m
+CONFIG_PACKAGE_ipq-wifi-zyxel_nbg7815=m
 CONFIG_PACKAGE_airoha-en8811h-firmware=m
 CONFIG_PACKAGE_ar3k-firmware=m
 CONFIG_PACKAGE_ath10k-board-qca9887=m
@@ -2599,6 +2646,7 @@ CONFIG_PACKAGE_kmod-i2c-ccgs-ucsi=m
 CONFIG_PACKAGE_kmod-i2c-core=m
 CONFIG_PACKAGE_kmod-i2c-designware-core=m
 CONFIG_PACKAGE_kmod-i2c-designware-pci=m
+CONFIG_PACKAGE_kmod-i2c-designware-platform=m
 CONFIG_PACKAGE_kmod-i2c-gpio=m
 CONFIG_PACKAGE_kmod-i2c-mux=m
 CONFIG_PACKAGE_kmod-i2c-mux-gpio=m
@@ -2657,6 +2705,7 @@ CONFIG_PACKAGE_kmod-input-uinput=m
 CONFIG_PACKAGE_kmod-input-leds=m
 CONFIG_PACKAGE_kmod-leds-gpio=m
 CONFIG_PACKAGE_kmod-leds-ktd202x=m
+CONFIG_PACKAGE_kmod-leds-lp5523=m
 CONFIG_PACKAGE_kmod-leds-lp5562=m
 CONFIG_PACKAGE_kmod-leds-lp55xx-common=m
 CONFIG_PACKAGE_kmod-leds-pca955x=m
@@ -2838,6 +2887,7 @@ CONFIG_PACKAGE_kmod-b44=m
 CONFIG_PACKAGE_kmod-be2net=m
 CONFIG_PACKAGE_kmod-bnx2=m
 CONFIG_PACKAGE_kmod-bnx2x=m
+CONFIG_PACKAGE_kmod-bnxt-en=m
 CONFIG_PACKAGE_kmod-dm9000=m
 CONFIG_PACKAGE_kmod-dsa=m
 CONFIG_PACKAGE_kmod-dsa-b53=m
@@ -2849,6 +2899,7 @@ CONFIG_PACKAGE_kmod-dsa-tag-dsa=m
 CONFIG_PACKAGE_kmod-dummy=m
 CONFIG_PACKAGE_kmod-e100=m
 CONFIG_PACKAGE_kmod-e1000=m
+CONFIG_PACKAGE_kmod-enc28j60=m
 CONFIG_PACKAGE_kmod-et131x=m
 CONFIG_PACKAGE_kmod-ethoc=m
 CONFIG_PACKAGE_kmod-fixed-phy=m
@@ -2911,6 +2962,7 @@ CONFIG_PACKAGE_kmod-r8126-rss=m
 CONFIG_PACKAGE_kmod-r8127=m
 CONFIG_PACKAGE_kmod-r8127-rss=m
 CONFIG_PACKAGE_kmod-r8168=m
+CONFIG_PACKAGE_kmod-r8168-rss=m
 CONFIG_PACKAGE_kmod-r8169=m
 CONFIG_PACKAGE_kmod-rmnet=m
 CONFIG_PACKAGE_kmod-sfc=m
@@ -3118,6 +3170,8 @@ CONFIG_PACKAGE_kmod-rtc-pcf8563=m
 CONFIG_PACKAGE_kmod-mmc-spi=m
 CONFIG_PACKAGE_kmod-spi-bitbang=m
 CONFIG_PACKAGE_kmod-spi-dev=m
+CONFIG_PACKAGE_kmod-spi-dw=m
+CONFIG_PACKAGE_kmod-spi-dw-mmio=m
 CONFIG_PACKAGE_kmod-spi-gpio=m
 CONFIG_PACKAGE_kmod-sound-core=m
 CONFIG_PACKAGE_kmod-ac97=m
@@ -3538,6 +3592,7 @@ CONFIG_MBEDTLS_KEY_EXCHANGE_ECDHE_RSA_ENABLED=y
 CONFIG_MBEDTLS_KEY_EXCHANGE_ECDHE_ECDSA_ENABLED=y
 # CONFIG_MBEDTLS_KEY_EXCHANGE_ECDH_ECDSA_ENABLED is not set
 # CONFIG_MBEDTLS_KEY_EXCHANGE_ECDH_RSA_ENABLED is not set
+# CONFIG_MBEDTLS_KEY_EXCHANGE_ECJPAKE_ENABLED is not set
 # CONFIG_MBEDTLS_ECP_DP_SECP192R1_ENABLED is not set
 # CONFIG_MBEDTLS_ECP_DP_SECP224R1_ENABLED is not set
 CONFIG_MBEDTLS_ECP_DP_SECP256R1_ENABLED=y
@@ -3670,6 +3725,7 @@ CONFIG_LUCI_CSSTIDY=y
 # CONFIG_LUCI_LANG_fi is not set
 # CONFIG_LUCI_LANG_fil is not set
 # CONFIG_LUCI_LANG_fr is not set
+# CONFIG_LUCI_LANG_ga is not set
 # CONFIG_LUCI_LANG_he is not set
 # CONFIG_LUCI_LANG_hi is not set
 # CONFIG_LUCI_LANG_hu is not set
@@ -3939,8 +3995,8 @@ CONFIG_BUSYBOX_CONFIG_FEATURE_SEAMLESS_GZ=y
 CONFIG_BUSYBOX_CONFIG_GUNZIP=y
 CONFIG_BUSYBOX_CONFIG_ZCAT=y
 # CONFIG_BUSYBOX_CONFIG_FEATURE_GUNZIP_LONG_OPTIONS is not set
-CONFIG_BUSYBOX_CONFIG_BUNZIP2=y
-CONFIG_BUSYBOX_CONFIG_BZCAT=y
+# CONFIG_BUSYBOX_CONFIG_BUNZIP2 is not set
+# CONFIG_BUSYBOX_CONFIG_BZCAT is not set
 # CONFIG_BUSYBOX_CONFIG_UNLZMA is not set
 # CONFIG_BUSYBOX_CONFIG_LZCAT is not set
 # CONFIG_BUSYBOX_CONFIG_LZMA is not set
@@ -3948,7 +4004,6 @@ CONFIG_BUSYBOX_CONFIG_BZCAT=y
 # CONFIG_BUSYBOX_CONFIG_XZCAT is not set
 # CONFIG_BUSYBOX_CONFIG_XZ is not set
 # CONFIG_BUSYBOX_CONFIG_BZIP2 is not set
-CONFIG_BUSYBOX_CONFIG_FEATURE_BZIP2_DECOMPRESS=y
 # CONFIG_BUSYBOX_CONFIG_CPIO is not set
 # CONFIG_BUSYBOX_CONFIG_DPKG is not set
 # CONFIG_BUSYBOX_CONFIG_DPKG_DEB is not set
@@ -4641,7 +4696,7 @@ CONFIG_BUSYBOX_CONFIG_KILLALL=y
 # CONFIG_BUSYBOX_CONFIG_MPSTAT is not set
 # CONFIG_BUSYBOX_CONFIG_NMETER is not set
 CONFIG_BUSYBOX_CONFIG_PGREP=y
-# CONFIG_BUSYBOX_CONFIG_PKILL is not set
+CONFIG_BUSYBOX_CONFIG_PKILL=y
 CONFIG_BUSYBOX_CONFIG_PIDOF=y
 # CONFIG_BUSYBOX_CONFIG_FEATURE_PIDOF_SINGLE is not set
 # CONFIG_BUSYBOX_CONFIG_FEATURE_PIDOF_OMIT is not set
@@ -4759,106 +4814,137 @@ CONFIG_PACKAGE_zlib-dev=m
 #
 # Block Devices
 #
+# end of Block Devices
 
 #
 # CAN Support
 #
+# end of CAN Support
 
 #
 # Cryptographic API modules
 #
+# end of Cryptographic API modules
 
 #
 # Filesystems
 #
+# end of Filesystems
 
 #
 # FireWire support
 #
+# end of FireWire support
 
 #
 # GPIO support
 #
+# end of GPIO support
 
 #
 # Hardware Monitoring Support
 #
+# end of Hardware Monitoring Support
 
 #
 # I2C support
 #
+# end of I2C support
 
 #
 # Industrial I/O Modules
 #
+# end of Industrial I/O Modules
 
 #
 # Input modules
 #
+# end of Input modules
 
 #
 # LED modules
 #
+# end of LED modules
 
 #
 # Libraries
 #
+# end of Libraries
 
 #
 # Multiplexer Support
 #
+# end of Multiplexer Support
 
 #
 # Native Language Support
 #
+# end of Native Language Support
 
 #
 # Netfilter Extensions
 #
+# end of Netfilter Extensions
 
 #
 # Network Devices
 #
+# end of Network Devices
 
 #
 # Network Support
 #
+# end of Network Support
 
 #
 # Other modules
 #
+# end of Other modules
 
 #
 # PCMCIA support
 #
+# end of PCMCIA support
+
+#
+# RTC Real-Time Clock Support
+#
+# end of RTC Real-Time Clock Support
 
 #
 # SPI Support
 #
+# end of SPI Support
 
 #
 # Sound Support
 #
+# end of Sound Support
 
 #
 # USB Support
 #
+# end of USB Support
 
 #
 # Video Support
 #
+# end of Video Support
 
 #
 # Virtualization
 #
+# end of Virtualization
 
 #
 # W1 support
 #
+# end of W1 support
 
 #
 # WPAN 802.15.4 Support
 #
+# end of WPAN 802.15.4 Support
 # end of Kernel modules
 
 #
@@ -4885,6 +4971,7 @@ CONFIG_PACKAGE_libpcre2-16=m
 CONFIG_PACKAGE_libpcre2-32=m
 CONFIG_PACKAGE_libselinux=m
 CONFIG_PACKAGE_libsepol=m
+CONFIG_PACKAGE_libtirpc=m
 CONFIG_PACKAGE_libubox-lua=m
 CONFIG_PACKAGE_musl-fts=m
 
