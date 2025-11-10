@@ -3,8 +3,8 @@
 // Author: Olivier Sirol <czo@free.fr>
 // License: GPL-2.0 (http://www.gnu.org/copyleft)
 // File Created: nov. 2018
-// Last Modified: Monday 10 November 2025, 21:55
-// Edit Time: 2:40:04
+// Last Modified: Monday 10 November 2025, 22:18
+// Edit Time: 2:43:24
 -->
 
 # My BusyBox for OpenWRT
@@ -86,13 +86,7 @@ cp ../.config.ow.czo .config
 make package/busybox/compile
 ```
 
-The package is in `bin/packages/mips_24kc/base/busybox_1.36.1-42_mips_24kc.ipk`.
-
-Copy it to your OpenWRT
- `scp bin/packages/mips_24kc/base/busybox_1.36.1-42_mips_24kc.ipk root@sw-marion:/tmp/`
-and install it on your router
- `opkg install /tmp/busybox_1.36.1-42_mips_24kc.ipk`
-and `reboot` it!
+The package is in `bin/packages/mips_24kc/base/busybox_1.36.1-r42_mips_24kc.ipk`.
 
 ## Development
 
