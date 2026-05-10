@@ -3,8 +3,8 @@
 // Author: Olivier Sirol <czo@free.fr>
 // License: GPL-2.0 (http://www.gnu.org/copyleft)
 // File Created: nov. 2018
-// Last Modified: Monday 10 November 2025, 22:18
-// Edit Time: 2:43:24
+// Last Modified: Sunday 10 May 2026, 21:41
+// Edit Time: 6:11:52
 -->
 
 # My BusyBox for OpenWRT
@@ -35,20 +35,20 @@ and busybox applet
 You can download my new busybox for TP-Link Archer C7 v2 on my [Releases page](https://github.com/czodroid/openwrt-busybox-czo/releases).
 
 Copy it to your OpenWRT
- `scp busybox_1.36.1-r42_mips_24kc.ipk root@sw-marion:/tmp/`
+ `scp busybox-1.37.0-r42.apk root@sw-marion:/tmp/`
 and install it on your router
- `opkg install /tmp/busybox_1.36.1-r42_mips_24kc.ipk`
+ `apk add --allow-untrusted busybox-1.37.0-r42.apk`
 and `reboot` it!
 
 ### Size
 
 Doing a `ls -al overlay/upper/bin/busybox rom/bin/busybox` you can know the size of BusyBox.
 
-For busybox 1.36.1 on OpenWrt 24.10.4, its size is 20% bigger:
+For busybox 1.37.0 on OpenWrt 25.12.3, its size is 20% bigger:
 
 ```
--rwxr-xr-x 1 root root 393253 Jul 27 19:42 overlay/upper/bin/busybox
--rwxr-xr-x 1 root root 327717 Oct 19 18:37 rom/bin/busybox
+-rwxr-xr-x 1 root root 393253 2026-05-05 00:48 overlay/upper/bin/busybox
+-rwxr-xr-x 1 root root 327717 2026-05-05 00:30 rom/bin/busybox
 ```
 
 I don't know why the openwrt team doesn't add these commands... but I'd like to know.
@@ -65,15 +65,12 @@ documentation.
 
 ### Quickstart for TP-Link Archer C7 v2
 
-For busybox 1.36.1 on OpenWrt 24.10.4
-
 Download the SDK, untar it, mv it to a small name, and cd to it. Then run `feeds` to obtain all the latest package definitions and get busybox, then run `usign` to get a key-build, then copy .config.ow.czo (my defition of BusyBox), then make!
 
 ```
-wget https://downloads.openwrt.org/releases/24.10.4/targets/ath79/generic/openwrt-sdk-24.10.4-ath79-generic_gcc-13.3.0_musl.Linux-x86_64.tar.zst
-tar -xf openwrt-sdk-24.10.4-ath79-generic_gcc-13.3.0_musl.Linux-x86_64.tar.zst
-mv openwrt-sdk-24.10.4-ath79-generic_gcc-13.3.0_musl.Linux-x86_64 owrt
-
+wget https://downloads.openwrt.org/releases/25.12.3/targets/ath79/generic/openwrt-sdk-25.12.3-ath79-generic_gcc-14.3.0_musl.Linux-x86_64.tar.zst
+tar -xf openwrt-sdk-25.12.3-ath79-generic_gcc-14.3.0_musl.Linux-x86_64.tar.zst
+mv openwrt-sdk-25.12.3-ath79-generic_gcc-14.3.0_musl.Linux-x86_64 owrt
 cd owrt
 ./scripts/feeds update -a
 ./scripts/feeds install busybox
@@ -86,7 +83,7 @@ cp ../.config.ow.czo .config
 make package/busybox/compile
 ```
 
-The package is in `bin/packages/mips_24kc/base/busybox_1.36.1-r42_mips_24kc.ipk`.
+The package is in `bin/packages/mips_24kc/base/busybox-1.37.0-r42.apk`.
 
 ## Development
 
@@ -120,7 +117,7 @@ Base system -->
 then at line ~4000, CONFIG_BUSYBOX_CONFIG_HAVE_DOT_CONFIG=y, and go for diff!
 
 ```
-vimdiff .config ../.config.ow.czo
+vim -d .config ../.config.ow.czo
 ```
 
 ### Make
