@@ -3,8 +3,8 @@
 // Author: Olivier Sirol <czo@free.fr>
 // License: GPL-2.0 (http://www.gnu.org/copyleft)
 // File Created: nov. 2018
-// Last Modified: Sunday 10 May 2026, 21:41
-// Edit Time: 6:11:52
+// Last Modified: Monday 11 May 2026, 18:48
+// Edit Time: 6:12:10
 -->
 
 # My BusyBox for OpenWRT
@@ -37,7 +37,7 @@ You can download my new busybox for TP-Link Archer C7 v2 on my [Releases page](h
 Copy it to your OpenWRT
  `scp busybox-1.37.0-r42.apk root@sw-marion:/tmp/`
 and install it on your router
- `apk add --allow-untrusted busybox-1.37.0-r42.apk`
+ `apk add --allow-untrusted /tmp/busybox-1.37.0-r42.apk`
 and `reboot` it!
 
 ### Size
