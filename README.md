@@ -3,13 +3,14 @@
 // Author: Olivier Sirol <czo@free.fr>
 // License: GPL-2.0 (http://www.gnu.org/copyleft)
 // File Created: nov. 2018
-// Last Modified: Monday 11 May 2026, 18:48
-// Edit Time: 6:12:10
+// Last Modified: Thursday 02 July 2026, 20:30
+// Edit Time: 6:33:58
 -->
 
 # My BusyBox for OpenWRT
 
-Recompile BusyBox with the following applets that are not included in OpenWrt's default BusyBox:
+Recompile BusyBox with the following applets that are not included in OpenWrt's
+default BusyBox:
 
 ```
 arping
@@ -32,7 +33,8 @@ and busybox applet
 
 ## Binaries for TP-Link Archer C7 v2
 
-You can download my new busybox for TP-Link Archer C7 v2 on my [Releases page](https://github.com/czodroid/openwrt-busybox-czo/releases).
+You can download my new busybox for TP-Link Archer C7 v2 on my
+[Releases page](https://github.com/czodroid/openwrt-busybox-czo/releases).
 
 Copy it to your OpenWRT
  `scp busybox-1.37.0-r42.apk root@sw-marion:/tmp/`
@@ -40,11 +42,14 @@ and install it on your router
  `apk add --allow-untrusted /tmp/busybox-1.37.0-r42.apk`
 and `reboot` it!
 
+> Note: it is not an opkg .ipk, it is an .apk for apk tools that the new release
+of OpenWRT uses, borrowed from Alpine Linux.
+
 ### Size
 
 Doing a `ls -al overlay/upper/bin/busybox rom/bin/busybox` you can know the size of BusyBox.
 
-For busybox 1.37.0 on OpenWrt 25.12.3, its size is 20% bigger:
+For busybox 1.37.0 on OpenWrt 25.12.5, its size is 20% bigger:
 
 ```
 -rwxr-xr-x 1 root root 393253 2026-05-05 00:48 overlay/upper/bin/busybox
@@ -65,12 +70,14 @@ documentation.
 
 ### Quickstart for TP-Link Archer C7 v2
 
-Download the SDK, untar it, mv it to a small name, and cd to it. Then run `feeds` to obtain all the latest package definitions and get busybox, then run `usign` to get a key-build, then copy .config.ow.czo (my defition of BusyBox), then make!
+Download the SDK, untar it, rename it to a shorter name, and cd to it. Then run `feeds`
+to obtain all the latest package definitions and get busybox, then run `usign` to
+get a key-build, then copy .config.ow.czo (my defition of BusyBox), then make!
 
 ```
-wget https://downloads.openwrt.org/releases/25.12.3/targets/ath79/generic/openwrt-sdk-25.12.3-ath79-generic_gcc-14.3.0_musl.Linux-x86_64.tar.zst
-tar -xf openwrt-sdk-25.12.3-ath79-generic_gcc-14.3.0_musl.Linux-x86_64.tar.zst
-mv openwrt-sdk-25.12.3-ath79-generic_gcc-14.3.0_musl.Linux-x86_64 owrt
+wget https://downloads.openwrt.org/releases/25.12.5/targets/ath79/generic/openwrt-sdk-25.12.5-ath79-generic_gcc-14.3.0_musl.Linux-x86_64.tar.zst
+tar -xf openwrt-sdk-25.12.5-ath79-generic_gcc-14.3.0_musl.Linux-x86_64.tar.zst
+mv openwrt-sdk-25.12.5-ath79-generic_gcc-14.3.0_musl.Linux-x86_64 owrt
 cd owrt
 ./scripts/feeds update -a
 ./scripts/feeds install busybox
@@ -83,7 +90,7 @@ cp ../.config.ow.czo .config
 make package/busybox/compile
 ```
 
-The package is in `bin/packages/mips_24kc/base/busybox-1.37.0-r42.apk`.
+The new package is in `bin/packages/mips_24kc/base/busybox-1.37.0-r42.apk`.
 
 ## Development
 
@@ -139,7 +146,7 @@ make package/busybox/compile
 
 ### Support Community
 
-* [Forum](https://forum.openwrt.org): For usage, projects, discussions and hardware advise.
+* [Forum](https://forum.openwrt.org): For usage, projects, discussions and hardware advice.
 * [Support Chat](https://webchat.oftc.net/#openwrt): Channel `#openwrt` on **oftc.net**.
 
 ### Developer Community
