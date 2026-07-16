@@ -3,8 +3,8 @@
 // Author: Olivier Sirol <czo@free.fr>
 // License: GPL-2.0 (http://www.gnu.org/copyleft)
 // File Created: nov. 2018
-// Last Modified: Thursday 02 July 2026, 20:30
-// Edit Time: 6:33:58
+// Last Modified: Thursday 16 July 2026, 20:48
+// Edit Time: 6:38:26
 -->
 
 # My BusyBox for OpenWRT
@@ -27,7 +27,7 @@ tty
 xxd
 pgrep
 pkill
-editing savehistory
+sh with editing savehistory, reverse search, and better terminal
 and busybox applet
 ```
 
@@ -49,7 +49,7 @@ of OpenWRT uses, borrowed from Alpine Linux.
 
 Doing a `ls -al overlay/upper/bin/busybox rom/bin/busybox` you can know the size of BusyBox.
 
-For busybox 1.37.0 on OpenWrt 25.12.5, its size is 20% bigger:
+For busybox 1.37.0 on OpenWrt 25.12.5, its size is 8% bigger:
 
 ```
 -rwxr-xr-x 1 root root 393253 2026-05-05 00:48 overlay/upper/bin/busybox
